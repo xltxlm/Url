@@ -1,0 +1,21 @@
+{
+  "name": "xltxlm/url",
+  "authors": [
+    {
+      "name": "copygithub",
+      "email": "xltxlm@qq.com"
+    }
+  ],
+  "description":"网址的相关处理",
+  "require": {
+    "php": ">=7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "xltxlm\\url\\": [
+        "src/",
+        "./"
+      ]
+    }
+  }
+}
