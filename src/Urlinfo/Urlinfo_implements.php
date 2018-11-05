@@ -14,12 +14,17 @@ abstract class Urlinfo_implements
     /* @var string 协议:http/s */
         protected $scheme = '';
     
+
+
     /**
      * @return string;
      */
     public function getscheme():string    {
         return $this->scheme;
     }
+
+
+
 
     /**
      * @param string $scheme;
@@ -34,12 +39,17 @@ abstract class Urlinfo_implements
     /* @var string 主机头,和域名不一样,域名只有2位 */
         protected $host = '';
     
+
+
     /**
      * @return string;
      */
     public function gethost():string    {
         return $this->host;
     }
+
+
+
 
     /**
      * @param string $host;
@@ -54,12 +64,17 @@ abstract class Urlinfo_implements
     /* @var string 类似xx.com. www部分不要 */
         protected $domain = '';
     
+
+
     /**
      * @return string;
      */
     public function getdomain():string    {
         return $this->domain;
     }
+
+
+
 
     /**
      * @param string $domain;
@@ -71,9 +86,11 @@ abstract class Urlinfo_implements
         return $this;
     }
 
-    /* @var string  */
+    /* @var string 端口号 */
         protected $port = '';
     
+
+
     /**
      * @return string;
      */
@@ -81,13 +98,41 @@ abstract class Urlinfo_implements
         return $this->port;
     }
 
+
+
+
     /**
      * @param string $port;
      * @return $this
      */
-    public function setport(string $port)
+    protected function setport(string $port)
     {
         $this->port = $port;
+        return $this;
+    }
+
+    /* @var string 请求路径 */
+        protected $path = '';
+    
+
+
+    /**
+     * @return string;
+     */
+    public function getpath():string    {
+        return $this->path;
+    }
+
+
+
+
+    /**
+     * @param string $path;
+     * @return $this
+     */
+    protected function setpath(string $path)
+    {
+        $this->path = $path;
         return $this;
     }
 

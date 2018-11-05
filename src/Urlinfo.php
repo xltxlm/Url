@@ -36,7 +36,7 @@ class Urlinfo extends Urlinfo\Urlinfo_implements
 
     public function gethost(): string
     {
-        return strtolower($this->parse_url['host']);
+        return $this->host = strtolower($this->parse_url['host']);
     }
 
     public function getdomain(): string
@@ -44,7 +44,7 @@ class Urlinfo extends Urlinfo\Urlinfo_implements
         $gethost = $this->gethost();
         $gethosts = explode('.', $gethost);
         $gethosts_new = array_slice($gethosts, -2);
-        return join('.', $gethosts_new);
+        return $this->domain = join('.', $gethosts_new);
     }
 
     public function getport(): string
@@ -58,6 +58,12 @@ class Urlinfo extends Urlinfo\Urlinfo_implements
             }
         }
         return $this->parse_url['port'];
+    }
+
+    public function getpath(): string
+    {
+        parent::setpath($this->parse_url['path']);
+        return $this->path;
     }
 
 
