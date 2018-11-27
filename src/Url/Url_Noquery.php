@@ -20,7 +20,7 @@ class Url_Noquery extends Url_Noquery\Url_Noquery_implements
             }
         }
 
-        $urlpath = $urlinfo->getscheme() . '//' . $urlinfo->gethost() . ':' . $urlinfo->getport() . '/' . $urlinfo->getpath();
+        $urlpath = $urlinfo->getscheme() . '://' . $urlinfo->gethost() . ':' . $urlinfo->getport() . '/' . $urlinfo->getpath();
 
         $queryString = '';
         if (empty($Keep_Args) == false) {
