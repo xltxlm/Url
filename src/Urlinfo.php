@@ -9,18 +9,6 @@ class Urlinfo extends Urlinfo\Urlinfo_implements
 {
     protected $parse_url = [];
 
-    /**
-     * Urlinfo constructor.
-     */
-    public function __construct(string $Url = '')
-    {
-        if ($Url) {
-            $this->setURL($Url);
-        } else {
-            $this->setURL($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-        }
-    }
-
 
     public function setURL(string $URL)
     {
@@ -64,6 +52,13 @@ class Urlinfo extends Urlinfo\Urlinfo_implements
     {
         parent::setpath($this->parse_url['path']);
         return $this->path;
+    }
+
+    public function getquery(): array
+    {
+        $parse_str = [];
+        parse_str($this->parse_url['query'], $parse_str);
+        return $parse_str;
     }
 
 
